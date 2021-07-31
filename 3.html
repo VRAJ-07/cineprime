@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>CINE PRIME | PHOTOGRAPHY</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mate+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="http://fonts.cdnfonts.com/css/abraham-lincoln" rel="stylesheet">
+  
+
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicom/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicom/android-chrome-512x512.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="favicom/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicom/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicom/favicon-32x32.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <style>
+
+      .prev,
+      .next {
+        position: fixed;
+        top: 0;
+        width: 21%;
+        height: 112%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        z-index: 999;
+        color: rgba(255, 255, 255, 0.281);
+        font-size: 8rem;
+        font-family: monospace;
+        transition: all .2s;
+      }
+      
+      .prev:hover,
+      .next:hover {
+        color: rgba(255, 255, 255, 0.486);
+      }
+      
+      .prev {left: -25%;}
+      .next {right: -25%;}
+      
+      .active .prev {left: 0;}
+      .active .next {right: 0;}
+      
+      .container {
+        margin: 10vh auto;
+        max-width: 80%;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: 250px;
+        grid-auto-flow: dense;
+      }
+      
+      div {
+        text-align: center;
+        padding: 1rem 0;
+        color: white;
+        /* font-size: 3rem; */
+        text-transform: uppercase;
+        background: rgba(255, 255, 255,);
+        overflow: hidden;
+        padding: 0;
+        /* display: flex; */
+        align-items: stretch;
+        justify-content: center;
+      }
+      
+      div img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        transition: all .5s;
+      }
+      
+      div.show::before {
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: 555;
+        width: 100vw;
+        height: 100vh;
+        top: 0; left: 0;
+        background: rgba(0,0,0,.6);
+      }
+      
+      div.show img {
+        position: fixed;
+        top: 0; left: 0;
+        margin: 30px;
+        margin-top: 75px;
+        align-self: center;
+        object-fit: contain;
+        z-index: 666;
+        width: calc(100% - 60px);
+        height: calc(100% - 60px);
+        filter: drop-shadow(0 3px 15px rgb(255, 255, 255));
+        cursor: url(close-button.png), grab; /* custom cursor to signal close on click */
+      }
+      
+      div:not(.show):hover img {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      
+      
+      .horizontal {
+        grid-column: span 1;
+      }
+      
+      .vertical {
+        grid-row: span 1;
+      }
+      
+      .big {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      
+      .active div:not(.show) img {
+        filter: blur(3px);
+      }
+      
+        </style>
+</head>
+<body>
+    
+  <div id="loading"></div>
+
+  <br>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fa fa-bars" style="font-size:24px"></i>
+      </label>
+      <label class="logo"><a href="home.html"><img src="logo.png" alt="" style="width: 120px; height: 72px; background-color: none; padding-bottom: 25px; padding-top: 8px; padding-left: 17px; cursor: pointer;"></a> </label>
+      <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a  class="active" href="photo.html">PHOTOGRAPHY</a></li>
+          <li><a href="cinema.html">CINEMATOGRAPHY</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+  </nav>
+
+  <a href="https://api.whatsapp.com/send/?phone=917359221112&text=I%27m+interested+in+your+car+for+sale&app_absent=0" class="float" target="_blank" style="text-decoration: none;">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <div class="parallax3" style="width: 100%;">
+      <p style="margin-top: 160px;"> <h1> RIPU AND FENY </h1> <br> 
+      <h3> DECEMBER 12 , 2019 </h3></p>
+      
+      </div>
+
+
+      
+    
+    <center>
+      <p style="margin-top: 50px; margin-bottom: 50px;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In ipsam veniam rerum odio ex veritatis illo debitis molestiae dolores dolore? Deleniti perferendis officiis, <br> reprehenderit unde molestiae dignissimos tempora modi commodi saepe cum illo. Amet veniam aliquid autem exercitationem iure! Quo necessitatibus <br> iste consequatur, quos, rem vero sint eius voluptatem impedit qui aliquam! Eveniet architecto recusandae aperiam nisi similique quisquam voluptatem possimus, eos ut ab velit voluptatum <br> ad esse nemo eligendi rem facilis debitis vel fugiat. Dignissimos consequuntur corporis adipisci sapiente dolor labore illo tempore perspiciatis. Similique corporis obcaecati eaque officiis labore dolores molestiae unde deserunt. Quidem aspernatur ut eius praesentium <br> rem? Fugiat alias rerum voluptatum illo saepe a qui fuga officiis laborum suscipit autem, aut eos placeat optio animi magnam nisi libero quam incidunt? Quod pariatur delectus facilis eligendi. <br> Hic saepe repudiandae itaque ratione inventore debitis optio autem officiis, sint est dicta. Quis quos veniam molestiae sequi dolores voluptate earum, qui delectus maxime numquam, officia ullam et <br> architecto quas laborum, tempore vero omnis adipisci nemo beatae harum consequatur porro expedita eum! Explicabo, quisquam. Reiciendis, deserunt expedita, eos omnis delectus <br> alias hic sapiente aliquid eius nostrum veritatis doloribus repellendus autem deleniti perferendis necessitatibus tempora! Qui nihil possimus velit, nostrum quisquam ab.
+      </p>
+  </center>
+  
+
+
+    <a href="#" class="prev">&lt;</a>
+    <a href="#" class="next">&gt;</a>
+    <main class="container">
+      <div><img src="images/Ripunjay + Feny =39/_L6A8993a.jpg" alt=""></div>
+      <div class="vertical"><img src="images/Ripunjay + Feny =39/_L6A9000.jpg" alt=""></div>
+      <div class="horizontal"><img src="images/Ripunjay + Feny =39/_L6A9006.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9007.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9012.jpg" alt=""></div>
+      <div class="big"><img src="images/Ripunjay + Feny =39/_L6A9016.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9027.jpg" alt=""></div>
+      <div class="vertical"><img src="images/Ripunjay + Feny =39/_L6A9032.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9046a.jpg" alt=""></div>
+      <div class="horizontal"><img src="images/Ripunjay + Feny =39/_L6A9062a.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9072.jpg" alt=""></div>
+      <div class="big"><img src="images/Ripunjay + Feny =39/_L6A9110a.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9118.jpg" alt=""></div>
+      <div class="horizontal"><img src="images/Ripunjay + Feny =39/_L6A9124a.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9138a.jpg" alt=""></div>
+      <div class="big"><img src="images/Ripunjay + Feny =39/_L6A9142a.jpg" alt=""></div>
+      <div><img src="images/Ripunjay + Feny =39/_L6A9164.jpg" alt=""></div>
+      <div class="vertical"><img src="images/Ripunjay + Feny =39/_L6A9173.jpg" alt=""></div>
+    </main>
+
+    <script>
+      const divs = document.querySelectorAll('div');
+const body = document.body;
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+checkPrev = () => document.querySelector('div:first-child').classList.contains('show') ? prev.style.display = 'none' : prev.style.display = 'flex';
+
+checkNext = () => document.querySelector('div:last-child').classList.contains('show') ? next.style.display = 'none' : next.style.display = 'flex';
+			
+Array.prototype.slice.call(divs).forEach(function (el) {
+			el.addEventListener('click', function () {
+				this.classList.toggle('show');
+				body.classList.toggle('active');
+				checkNext();
+				checkPrev();
+			});
+});
+
+prev.addEventListener('click', function() {
+			const show = document.querySelector('.show');
+			const event = document.createEvent('HTMLEvents');
+			event.initEvent('click', true, false);
+
+			show.previousElementSibling.dispatchEvent(event);
+			show.classList.remove('show');
+			body.classList.toggle('active');
+			checkNext();
+});
+
+next.addEventListener('click', function() {
+			const show = document.querySelector('.show');
+			const event = document.createEvent('HTMLEvents');
+			event.initEvent('click', true, false);
+
+			show.nextElementSibling.dispatchEvent(event);
+			show.classList.remove('show');
+			body.classList.toggle('active');
+			checkPrev();
+});
+    </script>
+
+<!-- Footer -->  
+<div class="footer" style="background-color: rgb(0, 55, 115);">
+  <div class="fot">  
+    <footer class="w3-content w3-padding-64 w3-text-black w3-xlarge">
+      <a href="https://www.facebook.com/cineprimephotography/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity" style="color: rgb(255, 255, 255);"><div class="facebook">Facebook</div></i></a>
+      <a href="https://www.instagram.com/cine.prime/?hl=en" target="_blank" target="_blank"><i class="fa fa-instagram w3-hover-opacity" style="color: #ffffff"><div class="instagram">Instagram</div></i></a>
+      <a href="https://www.youtube.com/channel/UCyQ1KFsh1e3OqxnUMMHFpgw" target="_blank" target="_blank"><i class="fa fa-youtube w3-hover-opacity" style="color: rgb(255, 255, 255);"><div class="youtube">YouTube</div></i></a>
+    </div>
+    <p style="color: white;">Phone : +91 7359221112 / 9925760335</p>
+    <p style="color: white;">E-mail : cineprimephotography@gmail.com</p>
+    
+<br><br>
+<p class="w3-medium" style="font-size: xx-large; color: rgb(255, 255, 255); "> <b class="memories"> WE CAPTURE MEMORIES </b></p>
+<a class="copyright" href="index.html" class="flex-align-right" style="text-decoration: none; color: rgb(255, 255, 255);" >&copy; 2021 | CINE PRIME</a>
+<!-- End footer -->
+</div>
+</div>
+</div>
+
+  
+
+
+  </body>
+</html>

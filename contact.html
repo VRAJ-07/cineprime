@@ -1,141 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINE PRIME | CONNTACT US</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    <title>I-Coder - Heaven For Programmers</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="favicom/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicom/android-chrome-512x512.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="favicom/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicom/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicom/favicon-32x32.png">
+
+  <script src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_Fn46O6w0DHEeE3HNpqia0");
+})();
+</script>
+
+    
     <style>
-        #form{
-            padding-left: 6%;
-            padding-top: 2%;
-            padding-right: 6%;
-        }
+    input, textarea {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid silver;
+    }
 
-        #contact{
-            text-align: left;
-            padding: 0%;
-        }
+    #footer{
+  background-color: rgb(0, 55, 115);
+  height: 120px;
+  /* position: fixed; */
+  bottom: 0px;
+  left: 0px;
+  line-height: 45px;
+  color: #aaa;
+  text-align: center;
+  width: 100%;
+}
+
     </style>
-  </head>
-  <body>
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+  <a href="https://api.whatsapp.com/send/?phone=917359221112&text=I%27m+interested+in+your+car+for+sale&app_absent=0" class="float" target="_blank" style="text-decoration: none;">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
+  
+  <nav class="fixed-top">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars" style="font-size:24px; margin-top: 15px;"></i>
+    </label>
+    <label class="logo"><a href="home.html"><img src="logo.png" alt="" style="width: 120px; height: 72px; background-color: none; padding-bottom: 25px; padding-top: 8px; padding-left: 17px; cursor: pointer;"></a> </label>
+    <ul>
+        <li><a href="home.html" style="text-decoration: none;">HOME</a></li>
+        <li><a href="photo.html" style="text-decoration: none;">PHOTOGRAPHY</a></li>
+        <li><a href="cinema.html" style="text-decoration: none;">CINEMATOGRAPHY</a></li>
+        <li><a href="about.html" style="text-decoration: none;">ABOUT US</a></li>
+        <li><a class="active" href="contact.html" style="text-decoration: none;">CONTACT US</a></li>
+    </ul>
+</nav>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">I-Coder</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              
-            <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Topics
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Tech</a></li>
-                  <li><a class="dropdown-item" href="#">Web Dev</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Support</a></li>
-                  <li><a class="dropdown-item" href="#">Write for us</a></li>
-                </ul>
-              </li>
 
-              <li class="nav-item active">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-              
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
+
+  <div style="max-width: 600px;
+  padding: 1rem;
+  margin: 0 auto;">
+  <h1 style="text-align: center; margin-top: 75px; margin-bottom: 20px;">BOOK NOW</h1>
+    <input maxlength="50" id="name" size="30" type="text" required placeholder="Your Name"  /></p>
       
-    </nav>
+      <input maxlength="30" id="contact" size="30" type="tel" required  placeholder="Contact Number" /></p>
+      
+      <input maxlength="80" id="email" size="30" type="email"required  placeholder="E-mail Address" /></p>
+      
+      <input maxlength="50" id="date" size="30" type="text" required  placeholder="Dates of Event" /></p>
+      
+      <input maxlength="50" id="location" size="30" type="text" required  placeholder="Location of Event" /></p>
+      
+      <textarea cols="25" maxlength="1000" id="msg" rows="6" required placeholder="About the Event" ></textarea></p>
+      
+      <button type="button" class="btn btn-dark" onclick="sendMail() ; window.open('thankyou.html', '_blank')">SUBMIT</button>
 
-    <div class="container my-4" id="contact">
-        <h2>Contact Us</h2>
-        
+    
+
+  </div>
+
+  <br>
+
+  <div class="direct-contact" style="text-align: center; margin-top: 20px; color: black;">
+    <p style="text-align: center; font-size: 20px;">If you are unable to Submit, <a href="tel:+91 7359221112">click here</a> to contact us directly.</p>
+    <br>
+    <p> <b>Phone </b>  : +91 7359221112 / 9925760335</p>
+    <p> <b>E-mail </b> : cineprimephotography@gmail.com</p>
+    <br>
+    <div class="map" style="margin-top: 15px;">
+      <h4>Locate us on Map</h4>
+      <iframe style="text-align: left;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29531.815778521264!2d73.203306!3d22.297794!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x943719d574cc0f83!2sCINE%20PRIME%20PHOTOGRAPHY%20%26%20CINEMA!5e0!3m2!1sen!2sin!4v1627389573349!5m2!1sen!2sin" width="270" height="270" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <form id="form">
-        <form class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6" style="margin-top: 2%;">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12" style="margin-top: 2%;">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="123 Main Street">
-            </div>
-            <div class="col-12" style="margin-top: 2%;">
-              <label for="inputAddress2" class="form-label">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, Office, or Home">
-            </div>
-            <div class="col-md-6" style="margin-top: 2%;">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4" style="margin-top: 2%;">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Gujarat</option>
-                <option>Maharashtra</option>
-                <option>Rajasthan</option>
-                <option>Goa</option>
-              </select>
-            </div>
-            <div class="col-md-2" style="margin-top: 2%;">
-              <label for="inputZip" class="form-label">Pin Code </label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            
-          </form>
+    <div id="footer" style="margin-top: 20px;">
 
+      <a href="https://www.facebook.com/cineprimephotography/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity" style="color: rgb(255, 255, 255); margin-top: 20px;"><div class="facebook">Facebook</div></i></a>
+            <a href="https://www.instagram.com/cine.prime/?hl=en" target="_blank" target="_blank"><i class="fa fa-instagram w3-hover-opacity" style="color: #ffffff"><div class="instagram">Instagram</div></i></a>
+            <a href="https://www.youtube.com/channel/UCyQ1KFsh1e3OqxnUMMHFpgw" target="_blank" target="_blank"><i class="fa fa-youtube w3-hover-opacity" style="color: rgb(255, 255, 255);"><div class="youtube">YouTube</div></i></a>
+  <br>
+      <a href="index.html" class="flex-align-right" style="text-decoration: none; color: rgb(255, 255, 255);" >&copy; 2021 | CINE PRIME</a>
+  </div>
 
-        <button type="submit" class="btn btn-primary" style="margin-top: 2%;">Submit</button>
-      </form>
-      
-      
-
-    <footer class="container" style="margin-top: 2%;">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2020–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
-  </body>
+</body>
 </html>
